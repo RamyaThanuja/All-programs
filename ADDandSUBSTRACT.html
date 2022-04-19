@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>ADDandSUBSTRACT</title>
+<script>
+function addition(){
+var num1 =parseInt(f1.t1.value);
+var num2 =parseInt(f1.t2.value);
+f1.t3.value=num1+num2;
+}
+function subtraction(){
+var num1 =parseInt(f1.t1.value);
+var num2 =parseInt(f1.t2.value);
+f1.t3.value=num1-num2;
+}
+</script>
+</head>
+<body>
+<form name='f1' class='form'>
+<input type="text" name="t1" placeholder='value to add or sub'/><br>
+<input type="text" name="t2" placeholder='value to add or sub'><b></br>
+<input type="text" name="t3" placeholder='Answer'><b></br>
+<input type='button' name='btn1' value='add' onclick="addition()")/>
+<input type='button' name='btn2' value='Subtract' onclick="subtraction()"/>
+</form>
+</body>
+</html>

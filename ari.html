@@ -1,0 +1,173 @@
+
+
+<div class="navbar">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+<div class="quiz_container">
+<a class="dropdown_btn">Quizes Languages
+<i class="fa fa-caret-down"></i>
+</a>
+<div class="lang_container">
+<a href="#html">HTML</a>
+<a href="#css">CSS</a>
+<a href="#js">JavaScript</a>
+</div>
+</div>
+</div>
+
+
+
+<h1><center>Welcome to the online quiz!</center></h1>
+<h2 id="test_status"></h2>
+<div id="test"></div>
+</body>
+</html>
+var pos=0;
+var correct=0;
+var choice, choices, test, test_status, question, chA, chB, chC;
+var questions = [
+{
+question: "What does HTML stand for?",
+a:'Hyper text transfer protocol',
+b:'Hyper text markup language',
+c:'Hyper table makeup language',
+correctAnswer: 'b'
+},
+
+
+
+{
+question: "Who is making the Web standards?",
+a:'Mozilla',
+b:'Google',
+c:'WWW consortium',
+correctAnswer: 'c'
+},
+
+
+
+{
+question: "Which character is used to indicate an end tag? ",
+a:'*',
+b:'<',
+c:'/',
+correctAnswer: 'c'
+},
+
+
+
+{
+question: "In HTML, onblur and onfocus are:",
+a:'event attributes',
+b:'style attributes',
+c:'HTML elements',
+correctAnswer: 'a'
+},
+
+
+
+{
+question: "Which HTML attribute specifies an alternate text for an image, if the image cannot be displayed?",
+a:'src',
+b:'alt',
+c:'desc',
+correctAnswer: 'b'
+},
+
+
+
+{
+question: "In HTML, you can embed SVG elements directly into an HTML page.",
+a:'false',
+b:'true',
+c:'not sure',
+correctAnswer: 'b'
+},
+
+
+
+{
+question: "Inline elements are normally displayed without starting a new line.",
+a:'true',
+b:'false',
+c:'no answer',
+correctAnswer: 'b'
+},
+
+
+
+{
+question: "The HTML global attribute, contenteditable is used to:",
+a:'Specify whether the content of an element should be editable or not',
+b:'Update content from the server',
+c:'Return the position of the first found occurence of content inside a string',
+correctAnswer: 'c'
+},
+
+
+
+{
+question: "An iframe is used to display a web page within a web page.",
+a:'True',
+b:'There is no such thing as an iframe',
+c:'false',
+correctAnswer: 'a'
+},
+
+
+
+{
+question: "Block elements are normally displayed without starting a new line.",
+a:'True',
+b:'false',
+c:'no correct answer',
+correctAnswer: 'a'
+}];
+
+
+
+function get(x){
+return document.getElementById(x);
+}
+
+
+
+function showQuestion(){
+test = get("test");
+get("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+question = questions[pos].question;
+chA = questions[pos].a;
+chB = questions[pos].b;
+chC = questions[pos].c;
+test.innerHTML = "<h3>"+question+"</h3>";
+test.innerHTML += "<label> <input type='radio' name='choices' value='A'>"+chA+"</label>";
+test.innerHTML += "<label> <input type='radio' name='choices' value='B'>"+chB+"</label>";
+test.innerHTML += "<label> <input type='radio' name='choices' value='C'>"+chC+"</label><br><br>";
+test.innerHTML += "<button onclick='checkAnswer()'>Next</button>";
+if(pos>=questions.length){
+test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+get("test_status").innerHTML = "Test completed";
+pos=0;
+correct=0;
+return false;
+}
+}
+
+
+
+function checkAnswer(){
+choices = document.getElementsByName("choices");
+for(var i=0;i<choices.length;i++){
+if(choices[i].checked){
+choice = choices[i].value;
+}
+}
+if(choice==questions[pos].correctAnswer){
+console.log("correct");
+correct++;
+}
+pos++;
+showQuestion();
+}
+window.addEventListener("load",showQuestion)

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<title>ADD and DISPLAY</title>
+<body>
+<input type="textbox"id="name"></input>
+<button type="button" onclick="Add()">Add</button>
+<button type="button" onclick="Display()">Display</button>
+<div id="ramya"></div>
+<script>
+var array=[];
+function Add()
+{
+var arr=parseInt(document.getElementById("name").value);
+array.push(arr);
+console.log(arr);
+}
+function Display()
+{
+var s=" ";
+for(i=0;i<array.length;i++)
+{
+s=s+"Element"+i+"="+array[i]+"<br>";
+}
+document.getElementById("ramya").innerHTML=s;
+}
+</script>
+</body>
+</html>

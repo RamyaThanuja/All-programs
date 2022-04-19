@@ -1,0 +1,63 @@
+<!Doctype html>
+<head>
+<title> Modify as you want </title>
+<script>
+function myFunction() {
+var x = document.getElementById("myColor").value;
+
+var element = document.getElementById("container");
+element.style.color = x;
+}
+function changeSize() {
+var slider = document.getElementById("slider");
+var cont = document.getElementById("container");
+// Set slider value as fontSize
+
+cont.style.fontSize = slider.value +"0%";
+}
+function changeFonttype(){
+var changefontype=document.getElementById("fonttype");
+var changefont=changefonttype.value;
+if(changefonttype.checked==true){
+document.getElementById("container").style.fontWeight=changefont;
+}
+}
+var c = document.getElementById("fname");
+var changeFont = function(font){
+document.getElementById("container").style.fontFamily=font.value;
+}
+function myStyle(selectTag) {
+  var listValue = selectTag.options[selectTag.selectedIndex].text;
+  document.getElementById("container").style.fontStyle = listValue;
+}
+</script>
+</head>
+<body>
+<div style="padding: 20px; margin: 50px;
+font-size: 20px; border: 5px solid green;"
+id="container" class="container">
+RAMYA RAGHAVAN
+</div><br>
+<p id="fname">Font Style: </p>
+<select id="fontname" onchange="changeFont(this);">
+<option ></option>
+<option >Times new roman</option>
+<option >Roboto</option>
+<option >Sans-serif</option>
+<option >Sans</option>
+<option >Georgia</option>
+<option >Lato</option>
+<option >Arial black</option>
+</select><br>
+Select your favorite color: <input type="color" id="myColor">
+<button onclick="myFunction()">change color</button>
+<br>
+<input type="range" min="10" max="30"
+id="slider" value="20" onclick="changeSize()" /> <br>
+<select onchange="myStyle(this);">
+<option>normal</option>
+<option>italic</option>
+</select>
+</body>
+</html>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head><title>Favorite color</title>
+<script>
+function color(){
+var list = document.getElementById("color");
+var a = list.value;
+document.getElementById("here").innerHTML = a;
+}
+</script>
+</head>
+<body>
+<h2><center>Favorite color</center></h2>
+<label>
+<select id="color">
+<option>---Choose any one---</option>
+<option>Red</option>
+<option>Green</option>
+<option>Blue</option>
+<option>Black</option>
+</select>
+</label>
+<button type="button" onclick="color()">Show my selection</button>
+<p> The selected color is:
+<span id="here"></span></p>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<html>
+
+<style>
+
+button[type=submit]{
+
+background-color: orange;
+
+border: none;
+
+color: white;
+
+padding: 16px 32px;
+
+text-decoration: none;
+
+margin: 25px 50%;
+
+cursor: pointer;
+
+border-radius: 30px;
+
+}
+
+.submit{
+
+border: none;
+
+margin: 25px 50%;
+
+display: flex;
+
+}
+
+.login{
+
+margin: 35px 50%;
+
+}
+
+</style>
+
+<body>
+
+<section style style="background-color:chartreuse;">
+
+<form [formGroup]="loginFrom" (ngSubmit)="collectData()">
+
+<!-- <div style="text-align:center;"> -->
+
+<div allign='left'><b>Let's Get Started</b></div><br>
+
+<table style="display: flex; align-items: center; width: 100%; padding-left: 37%;">
+
+
+
+<tr>
+
+<td><label>NAME</label></td>
+
+<td style="padding-left: 50px;"><input type="text" name="NAME" formControlName="NAME" placeholder="Enter Full Name here"></td></tr>
+
+
+
+<tr>
+
+<td><label>EMAIL ID/USER NAME</label></td>
+
+<td style="padding-left: 50px;"> <input type="text" name="EMAILID/USERNAME" formControlName="Enter Email ID here" placeholder="Enter Email ID here"></td></tr>
+
+<tr>
+
+<td> <label>PASSWORD</label></td>
+
+<td style="padding-left: 50px;"><input type="text" name="PASSWORD" formControlName="Enter the password" placeholder="Enter the password"></td></tr>
+
+<tr>
+
+<td><label>CONFIRM PASSWORD</label></td>
+
+<td style="padding-left: 50px;"> <input type="text" name="CONFIRMPASSWORD" formControlName="Enter the mobile number" placeholder="Enter the mobile number"></td></tr>
+
+<tr>
+
+<td><label>MOBILE NUMBER</label></td>
+
+<td style="padding-left: 50px;"><input type="button" value="+91">&nbsp;&nbsp;
+
+<input type="text" value=" "></td></tr>
+
+<tr>
+
+<td><small>countrycode</small></td>
+
+</tr>
+
+<tr>
+
+<td> <label>MY RESUME</label></td>
+
+<td style="padding-left: 50px;"> <input type="text" name="MYRESUME" formControlName="Upload Resume here" placeholder="Upload Resume here"></td></tr>
+</tr>
+</table>
+
+<div class="submit">
+
+<button type="submit" value="submit">Register</button>&nbsp;&nbsp;&nbsp;
+
+<p class="login">Already Registered?</p>
+
+</div>
+
+</form>
+
+</section>
+
+</body>
+
+</html>

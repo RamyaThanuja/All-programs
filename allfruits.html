@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<title></title>
+<body>
+<table id="tblvegetables">
+    <tr>
+        <td><input id="chkcarrot" type="checkbox" value="CARROT"/><label for="chkcarrot">Carrot</label></td>
+    </tr>
+    <tr>
+        <td><input id="chkpotato" type="checkbox" value="POTATO"/><label for="chkpotato">Potato</label></td>
+    </tr>
+    <tr>
+        <td><input id="chkbrinjal" type="checkbox" value="BRINJAL"/><label for="chkbrinjal">Brinjal</label></td>
+    </tr>
+    <tr>
+        <td><input id="chkladiesfinger" type="checkbox" value="LADIESFINGER"/><label for="chkladiesfinge">Ladiesfinge</label></td>
+    </tr>
+    <tr>
+        <td><input id="chktomato" type="checkbox" value="TOMATO"/><label for="chktomato">Tomato</label></td>
+    </tr>
+</table>
+<br />
+<input type = "button" value = "Get" onclick = "GetSelected()" />
+ 
+ <script>
+function GetSelected() {
+var selected = new Array();
+var tblFruits = document.getElementById("tblvegetables");
+var chks = tblFruits.getElementsByTagName("INPUT");
+for (var i = 0; i < chks.length; i++) {
+if (chks[i].checked) {
+selected.push(chks[i].value);
+}
+}
+if (selected.length > 0) {
+alert("Selected Vegetables: " + selected.join(" & "));
+}
+}
+</script>
+</body>
+</html>
